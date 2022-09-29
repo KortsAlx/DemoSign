@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MenuView: View {
+    
+    @EnvironmentObject var authentication: Authentication
+
     @Environment(\.colorScheme) private var colorScheme
     private var backgroundColor: Color {
        switch colorScheme {
@@ -76,6 +79,32 @@ struct MenuView: View {
             
             
             .padding(.top, 30)
+            
+            
+            Spacer()
+            
+            Button(action: {
+                
+                authentication.updateValidation(success: false)
+
+            }){
+                HStack {
+                    Image("sesionicon")
+                        .foregroundColor(.gray)
+                        .imageScale(.large)
+                    Text("Cerrar sesión")
+                        .foregroundColor(.black)
+                        .font(Font.custom("Montserrat-Regular", size: 12))
+                    
+                }
+                
+                
+                .padding(.top,30)
+                
+            }
+            
+
+            
             Spacer()
             
         }

@@ -31,7 +31,7 @@ struct LoginView: View{
             
  
             LogoView()
-            
+            Text("Login").font(Font.custom("Montserrat-Bold", size: 20)).padding()
             VStack(alignment: .leading){
                 Text("Usuario").foregroundColor(.black)
                     .font(Font.custom("Montserrat-Regular", size: 15))
