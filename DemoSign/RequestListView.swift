@@ -60,8 +60,11 @@ struct RequestListView: View{
                               
                         }) {
                              Image("LogoSign")
-                                .fixedSize()
-                                .padding()
+                                .resizable()
+                                .frame(width: 85, height: 25)
+                                .padding(8)
+                                
+                            
                          }
                     }
                     
@@ -89,6 +92,8 @@ struct RequestListView: View{
 
 
 struct MainView: View {
+    @State var expediente: String = ""
+
     @Environment(\.colorScheme) private var colorScheme
     private var backgroundColor: Color {
        switch colorScheme {
@@ -104,9 +109,36 @@ struct MainView: View {
     @Binding var showMenu: Bool
     
     var body: some View {
-        VStack{
-            Text("Bandeja: Expedientes por atender")
-                .font(Font.custom("Montserrat-Bold", size: 15))
+        VStack(alignment: .leading, spacing: 20){
+            HStack(alignment: .center,spacing: 5.0){
+                VStack(alignment: .leading, spacing: 10){
+                    Text("Bandeja: Expedientes por atender")
+                        .font(Font.custom("Montserrat-Bold", size: 15))
+                    
+                    Text("Expedientes que tienes asignados para un proceso de revisión o firma.")
+                        .font(Font.custom("Montserrat-Regular", size: 13))
+                }
+             
+                
+                Spacer()
+                
+            }
+            .padding(20)
+            VStack{
+                HStack{
+                    Image("searchicontext").padding(.leading, 25)
+                    TextField("Ingresa el nombre o folio del expediente", text: $expediente)
+                        .padding(.leading,5)
+                        .font(Font.custom("Montserrat-Regular", size: 11))
+                        .frame(width: .infinity, height: 40)
+
+                }.overlay(RoundedRectangle(cornerRadius: 100).stroke(lineWidth: 1).foregroundColor(Color.black))
+                    
+         
+                
+            }.padding(.leading, 15).padding(.trailing, 15)
+            
+            Spacer()
             
         }
     }
