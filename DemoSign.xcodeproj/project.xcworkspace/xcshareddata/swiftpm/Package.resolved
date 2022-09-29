@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "sdk-lego-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://DocSolutions@dev.azure.com/DocSolutions/Onboarding/_git/SDK-LEGO-IOS",
+      "state" : {
+        "branch" : "DSCloudPIN",
+        "revision" : "8f02bedb444066ced2d048c93cb1a4705a38932e"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -19,6 +19,7 @@
 		A011677428E4FA22007DDD4A /* RequestListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011677328E4FA22007DDD4A /* RequestListViewModel.swift */; };
 		A011677628E4FA3A007DDD4A /* DetailRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011677528E4FA3A007DDD4A /* DetailRequestViewModel.swift */; };
 		A011677828E4FA9D007DDD4A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011677728E4FA9D007DDD4A /* AppConstants.swift */; };
+		A01574D628E5F8BA004C214C /* DSCloudPIN in Frameworks */ = {isa = PBXBuildFile; productRef = A01574D528E5F8BA004C214C /* DSCloudPIN */; };
 		A0B2603128E566C800BEEA56 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2603028E566C800BEEA56 /* Authentication.swift */; };
 		A0B2603328E5697C00BEEA56 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2603228E5697C00BEEA56 /* Credentials.swift */; };
 		A0D2A85928E540BC009945AB /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0D2A84728E540BC009945AB /* Montserrat-LightItalic.ttf */; };
@@ -83,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01574D628E5F8BA004C214C /* DSCloudPIN in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +227,9 @@
 			dependencies = (
 			);
 			name = DemoSign;
+			packageProductDependencies = (
+				A01574D528E5F8BA004C214C /* DSCloudPIN */,
+			);
 			productName = DemoSign;
 			productReference = A011675228E4F43D007DDD4A /* DemoSign.app */;
 			productType = "com.apple.product-type.application";
@@ -253,6 +258,9 @@
 				Base,
 			);
 			mainGroup = A011674928E4F43D007DDD4A;
+			packageReferences = (
+				A01574D428E5F8BA004C214C /* XCRemoteSwiftPackageReference "SDK-LEGO-IOS" */,
+			);
 			productRefGroup = A011675328E4F43D007DDD4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -511,6 +519,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A01574D428E5F8BA004C214C /* XCRemoteSwiftPackageReference "SDK-LEGO-IOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://DocSolutions@dev.azure.com/DocSolutions/Onboarding/_git/SDK-LEGO-IOS";
+			requirement = {
+				branch = DSCloudPIN;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A01574D528E5F8BA004C214C /* DSCloudPIN */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A01574D428E5F8BA004C214C /* XCRemoteSwiftPackageReference "SDK-LEGO-IOS" */;
+			productName = DSCloudPIN;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A011674A28E4F43D007DDD4A /* Project object */;
 }
