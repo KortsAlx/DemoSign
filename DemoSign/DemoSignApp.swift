@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct DemoSignApp: App {
+    @StateObject var authentication = Authentication()
+
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            if authentication.isValidated{
+                RequestListView()
+                    .environmentObject(authentication)
+            }else{
+                LoginView().environmentObject(authentication)
+                
+            }
+            
             //RequestListView()
             //ContentView()
         }

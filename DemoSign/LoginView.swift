@@ -10,7 +10,11 @@ import SwiftUI
 struct LoginView: View{
     @State var username: String = ""
     @State var password: String = ""
+
+    @EnvironmentObject var authentication: Authentication
     
+    @StateObject private var loginVM = LoginViewModel()
+
     @Environment(\.colorScheme) private var colorScheme
     private var backgroundColor: Color {
        switch colorScheme {
@@ -54,6 +58,7 @@ struct LoginView: View{
             
             VStack{
                 Button(action: {
+                    authentication.updateValidation(success: true)
                     
                 }){
                     Text("Iniciar sesión")

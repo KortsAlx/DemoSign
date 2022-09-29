@@ -9,7 +9,8 @@ import SwiftUI
 
 
 struct RequestListView: View{
-    
+    @EnvironmentObject var authentication: Authentication
+
     
     @State var showMenu = false
     @Environment(\.colorScheme) private var colorScheme
