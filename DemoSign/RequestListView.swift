@@ -12,9 +12,20 @@ struct RequestListView: View{
     
     
     @State var showMenu = false
+    @Environment(\.colorScheme) private var colorScheme
+    private var backgroundColor: Color {
+       switch colorScheme {
+       case .light:
+         return .white
+       case .dark:
+         return .white
+       @unknown default:
+         return .white
+       }
+     }
+
     
     var body: some View {
-        
         let drag = DragGesture()
             .onEnded {
                 if $0.translation.width < -200 {
@@ -35,8 +46,9 @@ struct RequestListView: View{
                         MenuView()
                             .frame(width: geometry.size.width/1.3)
                             .transition(.move(edge: .leading))
-                            
+
                     }
+                    
                 }
                     .gesture(drag)
             }
@@ -48,8 +60,7 @@ struct RequestListView: View{
                               
                         }) {
                              Image("LogoSign")
-                                //.fixedSize()
-                                .imageScale(.medium)
+                                .fixedSize()
                                 .padding()
                          }
                     }
@@ -69,6 +80,8 @@ struct RequestListView: View{
                     
                 ))
         }
+        .preferredColorScheme(.light)
+        
     }
     
 }
@@ -76,12 +89,26 @@ struct RequestListView: View{
 
 
 struct MainView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    private var backgroundColor: Color {
+       switch colorScheme {
+       case .light:
+         return .white
+       case .dark:
+         return .white
+       @unknown default:
+         return .white
+       }
+     }
     
     @Binding var showMenu: Bool
     
     var body: some View {
-        Text("Bandeja: Expedientes por atender")
-            .font(Font.custom("Montserrat-Bold", size: 15))
+        VStack{
+            Text("Bandeja: Expedientes por atender")
+                .font(Font.custom("Montserrat-Bold", size: 15))
+            
+        }
     }
 }
 

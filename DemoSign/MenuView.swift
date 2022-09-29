@@ -8,6 +8,20 @@
 import SwiftUI
 
 struct MenuView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    private var backgroundColor: Color {
+       switch colorScheme {
+       case .light:
+         return .white
+       case .dark:
+         return .white
+       @unknown default:
+         return .white
+       }
+     }
+
+    
+    
     var body: some View {
         VStack(alignment: .leading) {
             VStack{
@@ -67,7 +81,7 @@ struct MenuView: View {
         }
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background()
+            .background(backgroundColor)
             .edgesIgnoringSafeArea(.all)
         //Color(red: 32/255, green: 32/255, blue: 32/255)
     }
