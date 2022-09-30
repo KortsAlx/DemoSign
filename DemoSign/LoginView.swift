@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LoginView: View{
-    @State var username: String = ""
-    @State var password: String = ""
+    //@State var username: String = ""
+    //@State var password: String = ""
 
     @EnvironmentObject var authentication: Authentication
     
@@ -35,7 +35,7 @@ struct LoginView: View{
             VStack(alignment: .leading){
                 Text("Usuario").foregroundColor(.black)
                     .font(Font.custom("Montserrat-Regular", size: 15))
-                TextField("Usuario", text: $username)
+                TextField("Usuario", text: $loginVM.username)
                      .padding()
                      .foregroundColor(.black)
                      .font(Font.custom("Montserrat-Regular", size: 16))
@@ -46,7 +46,7 @@ struct LoginView: View{
    
             VStack(alignment: .leading){
                 Text("Contraseña").foregroundColor(.black).font(Font.custom("Montserrat-Regular", size: 15))
-                SecureField("Contraseña", text: $password)
+                SecureField("Contraseña", text: $loginVM.password)
                     .padding()
                     .font(Font.custom("Montserrat-Regular", size: 18))
                     .foregroundColor(.black)
@@ -58,7 +58,12 @@ struct LoginView: View{
             
             VStack{
                 Button(action: {
-                    authentication.updateValidation(success: true)
+                    //authentication.updateValidation(success: true)
+                    loginVM.login()
+                    if loginVM.isAuthenticated {
+                        authentication.updateValidation(success: true)
+                        
+                    }
                     
                 }){
                     Text("Iniciar sesión")
@@ -79,6 +84,8 @@ struct LoginView: View{
                 .cornerRadius(100)
                 .padding(.top, 150)
             }
+            
+
                  
                 
             Spacer()

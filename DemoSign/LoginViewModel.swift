@@ -6,23 +6,57 @@
 //
 
 import Foundation
+import CryptoKit
 
 class LoginViewModel: ObservableObject{
-    @Published var credentials = Credentials()
+    //@Published var credentials = Credentials()
     @Published var showProgressView = false
     @Published var error: Authentication.AuthenticationError?
+    @Published var isAuthenticated: Bool = false
+
     
+    var username: String = ""
+    var password: String = ""
     
     var loginDisabled: Bool {
-        credentials.email.isEmpty || credentials.password.isEmpty
+        username.isEmpty || password.isEmpty
     }
     
-    func login(completion: @escaping (Bool) -> Void){
+    func login(){
+        let defaults = UserDefaults.standard
         
-        showProgressView = true
+        WebService().login(username: username, hassPass: passSha256(pass: password), password: password){ result in
+            switch result {
+            case .success(let token):
+                defaults.setValue(token, forKey: "jsonwebtoken")
+                DispatchQueue.main.async {
+                    self.isAuthenticated = true
+                }
+                
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+                
+            }
+            
         
-        completion(true)
+            
+            
+        }
+        
+        //showProgressView = true
+        
+        //completion(true)
     }
     
+    
+    func passSha256(pass: String) -> String{
+        var inputData = Data(pass.utf8)
+        let hashed = SHA256.hash(data: inputData)
+        let hashString = hashed.compactMap { String(format: "%02x", $0) }.joined()
+        
+        return hashString
+        
+    }
     
 }

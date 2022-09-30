@@ -20,6 +20,9 @@
 		A011677628E4FA3A007DDD4A /* DetailRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011677528E4FA3A007DDD4A /* DetailRequestViewModel.swift */; };
 		A011677828E4FA9D007DDD4A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A011677728E4FA9D007DDD4A /* AppConstants.swift */; };
 		A01574D628E5F8BA004C214C /* DSCloudPIN in Frameworks */ = {isa = PBXBuildFile; productRef = A01574D528E5F8BA004C214C /* DSCloudPIN */; };
+		A03034A228E68553002BA750 /* AuthenticationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03034A128E68553002BA750 /* AuthenticationInput.swift */; };
+		A03034A428E6864A002BA750 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03034A328E6864A002BA750 /* WebService.swift */; };
+		A03034A628E68AA5002BA750 /* AuthenticationOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03034A528E68AA5002BA750 /* AuthenticationOutput.swift */; };
 		A0B2603128E566C800BEEA56 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2603028E566C800BEEA56 /* Authentication.swift */; };
 		A0B2603328E5697C00BEEA56 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2603228E5697C00BEEA56 /* Credentials.swift */; };
 		A0D2A85928E540BC009945AB /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0D2A84728E540BC009945AB /* Montserrat-LightItalic.ttf */; };
@@ -56,6 +59,9 @@
 		A011677328E4FA22007DDD4A /* RequestListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListViewModel.swift; sourceTree = "<group>"; };
 		A011677528E4FA3A007DDD4A /* DetailRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRequestViewModel.swift; sourceTree = "<group>"; };
 		A011677728E4FA9D007DDD4A /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		A03034A128E68553002BA750 /* AuthenticationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInput.swift; sourceTree = "<group>"; };
+		A03034A328E6864A002BA750 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		A03034A528E68AA5002BA750 /* AuthenticationOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationOutput.swift; sourceTree = "<group>"; };
 		A0B2603028E566C800BEEA56 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		A0B2603228E5697C00BEEA56 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		A0D2A84728E540BC009945AB /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -149,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				A0B2603228E5697C00BEEA56 /* Credentials.swift */,
+				A03034A128E68553002BA750 /* AuthenticationInput.swift */,
+				A03034A528E68AA5002BA750 /* AuthenticationOutput.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -175,6 +183,7 @@
 		A011676728E4F65C007DDD4A /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				A03034A328E6864A002BA750 /* WebService.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -305,7 +314,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A03034A228E68553002BA750 /* AuthenticationInput.swift in Sources */,
 				A011676E28E4F6EB007DDD4A /* RequestListView.swift in Sources */,
+				A03034A428E6864A002BA750 /* WebService.swift in Sources */,
 				A011676A28E4F683007DDD4A /* LoginView.swift in Sources */,
 				A011676C28E4F697007DDD4A /* MenuView.swift in Sources */,
 				A011675828E4F43D007DDD4A /* ContentView.swift in Sources */,
@@ -313,6 +324,7 @@
 				A011675628E4F43D007DDD4A /* DemoSignApp.swift in Sources */,
 				A0B2603328E5697C00BEEA56 /* Credentials.swift in Sources */,
 				A011677028E4F8BB007DDD4A /* DetailRequestView.swift in Sources */,
+				A03034A628E68AA5002BA750 /* AuthenticationOutput.swift in Sources */,
 				A011677428E4FA22007DDD4A /* RequestListViewModel.swift in Sources */,
 				A011677228E4F9CA007DDD4A /* LoginViewModel.swift in Sources */,
 				A011677828E4FA9D007DDD4A /* AppConstants.swift in Sources */,
