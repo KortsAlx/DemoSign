@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct RequestListViewModel{
+    
+    var model : FileCustomDataResponse
+   
+    var folio : String{
+        model.folio ?? ""
+    }
+    
+}

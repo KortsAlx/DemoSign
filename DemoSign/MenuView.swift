@@ -58,16 +58,6 @@ struct MenuView: View {
             }
             .padding(.top, 100)
             HStack {
-                Image("newicon")
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Text("Nuevo")
-                    .foregroundColor(.black)
-                    .font(Font.custom("Montserrat-Regular", size: 12))
-                
-            }
-                .padding(.top, 30)
-            HStack {
                 Image("searchicon")
                     .foregroundColor(.gray)
                     .imageScale(.large)
@@ -76,6 +66,8 @@ struct MenuView: View {
                     .font(Font.custom("Montserrat-Regular", size: 12))
                 
             }
+
+  
             
             
             .padding(.top, 30)

@@ -100,11 +100,22 @@ struct RequestListView: View{
     }
     
 }
+class initRequest: ObservableObject{
+    @StateObject var loginVM = LoginViewModel()
 
+    init(loginVM: LoginViewModel = LoginViewModel()) {
+        //self.loginVM = loginVM
+        loginVM.getAllRequests()
+    }
+    
+
+}
 
 
 struct MainView: View {
     @State var expediente: String = ""
+    
+    @StateObject var loginVM = LoginViewModel()
 
     @Environment(\.colorScheme) private var colorScheme
     private var backgroundColor: Color {
@@ -122,11 +133,17 @@ struct MainView: View {
     @Binding var viewOtp : Bool
     
 
+    //initRequest(loginVM: loginVM)
+
     
     var body: some View {
 
+ 
         NavigationView{
+            
             VStack(alignment: .leading, spacing: 20){
+                
+         
                 HStack(alignment: .center,spacing: 5.0){
                     VStack(alignment: .leading, spacing: 10){
                         Text("Bandeja: Expedientes por atender")
@@ -148,7 +165,7 @@ struct MainView: View {
                             .padding(.leading,5)
                             .foregroundColor(Color.black)
                             .font(Font.custom("Montserrat-Regular", size: 11))
-                            .frame(width: .infinity, height: 40)
+                            .frame(height: 40)
 
                     }.overlay(RoundedRectangle(cornerRadius: 100).stroke(lineWidth: 1).foregroundColor(Color.black))
                         
@@ -158,167 +175,45 @@ struct MainView: View {
                 
                 //List
              
-                Button(action: {
+          
+                /*Button(action: {
                     self.viewOtp = true
                     
                     
                 }){
-                    VStack{
-                        VStack{
-                            HStack{
-                                Spacer()
-                                Text("Folio: 122847")
-                                    .frame(width: .infinity, height: 60)
-                                    .font(Font.custom("Montserrat-SemiBold", size: 18))
-                                Spacer()
-                            }
-                            
-                            
-                            
-                        }
-                        .background(Color(red: 0.427, green: 0.714, blue: 0.145, opacity: 0.239))
-                        .cornerRadius(10)
-                        
-            
-                      
-                        VStack(alignment: .leading){
-                            VStack{
-                                
-                                HStack(alignment: .top){
-                                    //Spacer()
-                                    Text("Nombre del expediente ")
-                                        .font(Font.custom("Montserrat-SemiBold", size: 12))
-                                    
-                                    
-                              
-                                    HStack{
-                                        Spacer()
-                                        Text("Alta proveedor 19092022")
-                                            .font(Font.custom("Montserrat-Regular", size: 12))
-                                    }
-                                    Spacer()
-                                    
-                                } .frame(width: .infinity, height: 20)
-                                
-                                
-                            }
-                            
-                            Divider()
-                            VStack{
-                                
-                                HStack(alignment: .top){
-                                    //Spacer()
-                                    Text("Nombre del solicitante ")
-                                        .font(Font.custom("Montserrat-SemiBold", size: 12))
-                                    
-                                    
-                             
-                                    HStack{
-                                        Spacer()
-                                        Text("Johana Juárez Juárez")
-                                            .font(Font.custom("Montserrat-Regular", size: 12))
-                                    }
-                                    Spacer()
-                                    
-                                } .frame(width: .infinity, height: 20)
-                                
-                                
-                            }
-                            Divider()
-                            VStack{
-                                
-                                HStack(alignment: .top){
-                                    //Spacer()
-                                    Text("Fecha de creación")
-                                        .font(Font.custom("Montserrat-SemiBold", size: 12))
-                                        
-                                    
-                                    
-                                  
-                                    HStack{
-                                        Spacer()
-                                        Text("2022-09-19 05:13:30 pm")
-                                            .font(Font.custom("Montserrat-Regular", size: 12))
-                                    }
-                                    Spacer()
-                                    
-                                } .frame(width: .infinity, height: 20)
-                                
-                                
-                            }
-                            Divider()
-                            VStack{
-                                
-                                HStack(alignment: .top){
-                                    //Spacer()
-                                    Text("Fecha límite ")
-                                        .font(Font.custom("Montserrat-SemiBold", size: 12))
-                                    
-                                    
-                                    
-                                    HStack{
-                                        Spacer()
-                                        Text("2022-09-20")
-                                            .font(Font.custom("Montserrat-Regular", size: 12))
-                                            .padding(.leading, 50)
-                                    }
-                             
-                                    Spacer()
-                                    
-                                } .frame(width: .infinity, height: 20)
-                                
-                                
-                            }
-                            Divider()
-                            VStack{
-                                
-                                HStack(alignment: .top){
-                                    //Spacer()
-                                    Text("Estaus ")
-                                        .font(Font.custom("Montserrat-SemiBold", size: 12))
-                                    
-                                    
-                                    Spacer()
-                                    HStack(alignment: .bottom){
-                                        Spacer()
-                                        Circle()
-                                            .foregroundColor(Color.green)
-                                            .frame(width: 10, height: 10)
-                                            .padding(.top, 2)
-                                        Text("Nuevo documento")
-                                            .font(Font.custom("Montserrat-Regular", size: 12))
-                                        
-                                    }
-                                
-                                    Spacer()
-                                    
-                                } .frame(width: .infinity, height: 20)
-                                
-                                
-                            }
-                            
-                            
-                        }.padding(15)
-                        
-                        
-                            
-                        
-                        
-                      
-                    }.overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1).foregroundColor(Color(red: 0.851, green: 0.851, blue: 0.851))).padding(.leading, 15).padding(.trailing, 15)
-                    
-                    
-                    
-          
+  
 
                     
                     
                     
-                }.foregroundColor(Color.black)
+                }.foregroundColor(Color.black)*/
                 
-                Spacer()
-                
+                //Spacer()
+   
+                VStack{
+                    //Text("321321 "+loginVM.getAllRq.description)
+                    
+                    //Spacer()
+                    List{
+                        ForEach(loginVM.getAllRq, id: \.id){ index in
+                           
+                            let vModel = RequestListViewModel(model: index)
+                            RowRequest(requestVM: vModel)
+                         
+                           
+                            
+                        }
+                    }
+                    
+                }
+                .frame(height: .infinity)
+                .task {
+                    
+                    loginVM.getAllRequests()
+                }
             }
+            
+
 
             
         }

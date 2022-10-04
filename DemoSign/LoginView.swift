@@ -13,7 +13,7 @@ struct LoginView: View{
 
     @EnvironmentObject var authentication: Authentication
     
-    @StateObject private var loginVM = LoginViewModel()
+    @StateObject var loginVM = LoginViewModel()
 
     @Environment(\.colorScheme) private var colorScheme
     private var backgroundColor: Color {
@@ -57,11 +57,14 @@ struct LoginView: View{
  
             
             VStack{
+             
                 Button(action: {
                     //authentication.updateValidation(success: true)
                     loginVM.login()
                     if loginVM.isAuthenticated {
                         authentication.updateValidation(success: true)
+                        loginVM.getAllRequests()
+                        
                         
                     }
                     
@@ -92,6 +95,7 @@ struct LoginView: View{
             
         }.padding(40)
         .background(backgroundColor)
+        .foregroundColor(Color.black)
         
         
     }
