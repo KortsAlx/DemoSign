@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "98A992F3-F8FF-4E2B-9021-62755BE8AB64"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0AEF067A-81CE-47F2-907C-725C69F94AD5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoSign/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "getAllRequests()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0AEF067A-81CE-47F2-907C-725C69F94AD5 - 682142014a3c61c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;DemoSign.AllRequestOutput, DemoSign.AError&gt;) -&gt; () in DemoSign.LoginViewModel.getAllRequests() -&gt; ()"
+                  moduleName = "DemoSign"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brandon.martinez/Desktop/DemoSign/DemoSign/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "0AEF067A-81CE-47F2-907C-725C69F94AD5 - 682142014a3c61c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;DemoSign.AllRequestOutput, DemoSign.AError&gt;) -&gt; () in DemoSign.LoginViewModel.getAllRequests() -&gt; ()"
+                  moduleName = "DemoSign"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brandon.martinez/Desktop/DemoSign/DemoSign/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "296">
+               </Location>
+               <Location
+                  uuid = "0AEF067A-81CE-47F2-907C-725C69F94AD5 - 69842289d7cb4a99"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;DemoSign.AllRequestOutput, DemoSign.AError&gt;) -&gt; () in DemoSign.LoginViewModel.getAllRequests() -&gt; ()"
+                  moduleName = "DemoSign"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brandon.martinez/Desktop/DemoSign/DemoSign/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
